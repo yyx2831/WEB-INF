@@ -1,0 +1,131 @@
+body{background: #fff;}
+.deader {
+    width: 7.5rem;
+    height: 2.25rem;
+    background-image: linear-gradient(0deg,
+    #26b14f 0%,
+    #6ede6a 100%),
+    linear-gradient(
+            #29cb5c,
+            #29cb5c);
+    background-blend-mode: normal,
+    normal;
+    /*border-bottom-right-radius: 20%;*/
+    /*border-bottom-left-radius: 20%;*/
+}
+.self-msg{
+    width: 6.82rem;
+    margin: 0 auto;
+    padding-top: .45rem;
+}
+.head-img{
+    width: 1.36rem;
+    height: 1.36rem;
+    background-color: #ffffff;
+    box-shadow: 0 .03rem .09rem .01rem
+    rgba(192, 192, 192, 0.3);
+    border-radius: .56rem;
+    border: solid .04px #f7f7f8;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+}
+.head-img img{
+    width: 100%;
+    height: 100%;
+}
+.head-msg{
+    width: 5rem;
+    height: 1.36rem;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: .22rem;
+    position: relative;
+}
+.head-msg-p{
+    line-height: .68rem;
+    color: #fff;
+}
+.head-msg-p img{
+    display: inline-block;
+    vertical-align: middle;
+    height: .36rem;
+    margin-left: .2rem;
+}
+.head-toset{
+    width: .12rem;
+    height: .21rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: .2rem;
+    background: url("../img/jiantou_3.png") no-repeat center center;
+    background-size: contain;
+}
+.self-body{
+    margin: 0 auto;
+    padding: 0 .3rem;
+}
+.find-doctor{
+    width: 6.6rem;
+    height: 2.2rem;
+    background-color: #fff;
+    box-shadow: 0 .05rem 0.6rem 0.2rem rgba(192, 192, 192, 0.3);
+    border-radius: .10rem;
+    position: relative;
+}
+.doctor-img{
+    width: 2.18rem;
+    height: 2.09rem;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: .09rem;
+}
+.find-doctor-msg{
+    display: inline-block;
+    vertical-align: top;
+    padding-top: .68rem;
+    line-height: .42rem;
+    color: #aeaeae;
+}
+.doctor-tofind{
+    width: .16rem;
+    height: .27rem;
+    background: url("../img/jiantou_2.png") no-repeat center center;
+    background-size: contain;
+}
+.feature-list{
+    /*margin-top: .45rem;*/
+    border-top: 1px solid #ebebeb;
+}
+.feature-list li{
+    height: .8rem;
+    line-height: .8rem;
+    padding: .2rem 0;
+    list-style: none;
+    border-bottom: 1px solid #ebebeb;
+    position: relative;
+    font-size: .3rem;
+    color: #333;
+}
+.feature-list li img{
+    width: .49rem;
+    height: .56rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: .03rem;
+    margin-right: .35rem;
+}
+.list-go{
+    width: .12rem;
+    height: .21rem;
+    background: url("../img/jiantou_4.png") no-repeat center center;
+    background-size: contain;
+}
+.togo-jiant.right-text{
+    right: .4rem;
+    font-size: .3rem;
+    color: #414141;
+}
+
+

@@ -1,0 +1,16 @@
+$(()=>{
+    $(()=>{
+        $('#upImg').click(()=>{
+            JumpPage('./doctor/dataCertification.html')
+        });
+        $('#myPatient').click(()=>{
+            JumpPage('./doctor/myPatient.html')
+        });
+        $('#myOrders').click(()=>{
+            JumpPage('./order/orders.htm?user=yiShi')
+        });
+        $('#myQRCode').click(()=>{
+            JumpPage('./doctor/QRCode.html')
+        })
+    })
+});

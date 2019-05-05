@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>我的二维码</title>
+    <script src="../public/js/rem.js"></script>
+    <link rel="stylesheet" href="../public/css/common.css">
+    <link rel="stylesheet" href="../public/css/messageRecord.css">
+    <link rel="stylesheet" href="../public/css/fz.css">
+    <style>
+        html {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color: #F2F3F4;
+        }
+
+        .card {
+            width: 6.5rem;
+            height: 10rem;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .ui-list-img-square span {
+            border-radius: 50%;
+        }
+
+        .ui-list .ui-list-info .ysTitle {
+            color: #81CB6D;
+        }
+
+        .container .card .ui-border-tb:after {
+            border-bottom: none;
+        }
+
+        .ysName {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+        .ui-list li h4{
+            font-size: 0.5rem;
+        }
+        .ui-list-info p{
+            font-size: 0.4rem;
+        }
+        .QRCodeBox{
+            width: 100%;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .QRCode{
+            width: 80%;
+            height: 75%;
+            border: 3px solid #81CB6D;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .QRCode img{
+            width: 90%;
+        }
+        .textFoot{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .textFoot p{
+            color: #a9a9a9;
+            position: relative;
+            top: -0.3rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <ul class="ui-list ui-border-tb ">
+            <li>
+                <div class="ui-list-img-square">
+                    <span style="background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555738829604&di=eb2d4f04355501ff2371da72b12d6a3d&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%3D580%2Fsign%3Dbc51de1b7dc6a7efb926a82ecdfbafe9%2F987dc28f8c5494eeab5f74dd26f5e0fe98257e1c.jpg)"></span>
+                </div>
+                <div class="ui-list-info ui-border-t">
+                    <h4 class="ui-nowrap ysName">张医生</h4>
+                    <p class="ui-nowrap ysTitle">主治医师 | 儿科</p>
+                </div>
+            </li>
+        </ul>
+        <div class="QRCodeBox">
+            <div class="QRCode">
+                <img src="../public/img/QRCode.png" alt="">
+            </div>
+        </div>
+        <div class="textFoot">
+            <p>扫一扫立即关注~</p>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../plugin/jquery/jquery-3.2.1.min.js"></script>
+<script src="../public/js/common.js"></script>
+</html>

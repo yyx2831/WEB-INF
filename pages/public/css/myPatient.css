@@ -1,0 +1,87 @@
+.textTime {
+    color: #7a7a7a;
+    font-size: 0.2rem;
+    position: relative;
+    top: .28rem;
+    height: .2rem;
+}
+.qunTime{
+    color: #7a7a7a;
+    font-size: 0.2rem;
+    /*position: relative;*/
+    top: .5rem;
+    right: -0.55rem;
+    height: .5rem;
+}
+.nam {
+    width: 0.4rem;
+    position: relative;
+    display: inline-block;
+    top: -0.055rem;
+}
+
+.textTime {
+    position: relative;
+    left: -0.3rem;
+}
+
+.more {
+    background-color: #F3F3F3;
+    /*position: relative;*/
+    width: 100%;
+    left: -0.23rem;
+    text-align: center;
+    color: #dddddd;
+}
+
+.more2 {
+    width: 100%;
+    text-align: center;
+}
+.more2:before, .more2:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 10%;
+    height: 1px;
+    background-color: #dddddd;
+}
+.more2:before{
+    left: 28%;
+}
+.more2:after{
+    right: 28%;
+}
+.iconPos{
+    color: #5ac870;
+    position: relative;
+    top: -0.15rem;
+}
+.groupName{
+    width: 45%;
+    display: inline-block;
+}
+.newGroup{
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1rem;
+    background-color: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.newGroupBtn{
+    width: 4rem;
+    height: 0.8rem;
+    background-color: #86CD74;
+    border-radius: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.4rem;
+    transition: all 1ms;
+}

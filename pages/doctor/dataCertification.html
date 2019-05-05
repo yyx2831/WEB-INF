@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>资料认证</title>
+    <script src="../public/js/rem.js"></script>
+    <link rel="stylesheet" href="../public/css/common.css">
+    <link rel="stylesheet" href="../public/css/messageRecord.css">
+    <link rel="stylesheet" href="../public/css/fz.css">
+    <link rel="stylesheet" href="../public/css/dataCertification.css">
+</head>
+<body>
+<div class="upImgBox">
+    <p class="p1Pos">请上传您的医药资格证书以认证</p>
+    <p class="p2Color">(若有多张证书请同时拍照上传)</p>
+    <div class="upImgBtn">
+        <div class="imgC">
+            <img id="show" src="../public/img/xiangji@2x.png" alt="">
+            <input id="file" type="file" name="image" accept=“image/*” onchange='handleInputChange(event)' class="inputImg">
+        </div>
+        <p id="text">请上传证书图片～</p>
+    </div>
+</div>
+<div class="btn">提交审核</div>
+</body>
+<script src="../plugin/jquery/jquery-3.2.1.min.js"></script>
+<script src="../public/js/common.js"></script>
+<script src="../public/js/dataCertification.js"></script>
+</html>

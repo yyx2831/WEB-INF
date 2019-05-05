@@ -1,0 +1,97 @@
+body{background: #fff;}
+.header{
+    height: .88rem;
+    line-height: .88rem;
+    text-align: center;
+    font-size: .36rem;
+    background: #fff;
+    border-bottom: 1px solid #ebebeb;
+}
+.msg-list li{
+    list-style: none;
+    border-bottom: 1px solid #ebebeb;
+    padding: .32rem .36rem;
+    position: relative;
+    background: #fff;
+}
+.msg-headImg{
+    display: inline-block;
+    position: relative;
+}
+.msg-headImg img{
+    width: 1rem;
+    height: 1rem;
+    border-radius: .4rem;
+    border: solid 1px #e5e5e5;
+}
+.msg-headImg span{
+    height: .34rem;
+    width: .34rem;
+    display: inline-block;
+    position: absolute;
+    top: -.05rem;
+    right: -.05rem;
+    border-radius: 50%;
+    background: #ff0202;
+    text-align: center;
+    line-height: .34rem;
+    color: #fff;
+    font-size: .28rem;
+}
+.msg-content{
+    width: 4.35rem;
+    height: .9rem;
+    line-height: .45rem;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: .3rem;
+}
+.msg-content2{
+    width: 4.35rem;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: .3rem;
+}
+.msg-finalTime{
+    line-height: .45rem;
+    position: absolute;
+    top: .32rem;
+    right: .36rem;
+    font-size: .24rem;
+    color: #aeaeae;
+}
+.msg-name{
+    font-size: .36rem;
+}
+.msg-text,.msg-text2{
+    font-size: .26rem;
+    line-height: .32rem;
+    color: #aeaeae;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.msg-text{
+    -webkit-line-clamp: 1;
+}
+.msg-text2{
+    -webkit-line-clamp: 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

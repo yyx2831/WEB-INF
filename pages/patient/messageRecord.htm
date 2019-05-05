@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>消息列表</title>
+    <base href="../">
+    <link rel="stylesheet" href="public/css/common.css">
+    <link rel="stylesheet" href="public/css/messageRecord.css">
+</head>
+<body>
+<div class="header">消息记录</div>
+<ul class="msg-list">
+    <li>
+        <div class="msg-headImg">
+            <img src="./public/img/toux-.png" alt="">
+            <span>66</span>
+        </div>
+        <div class="msg-content">
+            <p class="msg-name">断袖之癖</p>
+            <p class="msg-text">每天早晚次，每次3颗。饮食上要注饮食上要注饮食上要注</p>
+        </div>
+        <div class="msg-finalTime">22:22</div>
+    </li>
+    <li>
+        <div class="msg-headImg">
+            <img src="./public/img/toux-.png" alt="">
+            <span>6</span>
+        </div>
+        <div class="msg-content">
+            <p class="msg-name">断袖之癖</p>
+            <p class="msg-text">每天早晚次，每次3颗。饮食上要注饮食上要注饮食上要注</p>
+        </div>
+        <div class="msg-finalTime">昨天</div>
+    </li>
+    <li>
+        <div class="msg-headImg">
+            <img src="./public/img/toux-.png" alt="">
+            <span>...</span>
+        </div>
+        <div class="msg-content">
+            <p class="msg-name">断袖之癖</p>
+            <p class="msg-text">每天早晚次，每次3颗。饮食上要注饮食上要注饮食上要注</p>
+        </div>
+        <div class="msg-finalTime">2016-03-22</div>
+    </li>
+</ul>
+<div class="self-bottom">
+    <a href="./messageRecord.htm"><div class="nav1 attr"><img src="./public/img/dibu_1.png" alt="">消息</div></a>
+    <a href="./index.htm"><div class="nav2"><img src="./public/img/grzx_3.png" alt="">我</div></a>
+</div>
+</body>
+<script src="plugin/jquery/jquery-3.2.1.min.js"></script>
+<script src="public/js/js/NIM_Web_NIM_v6.1.2.js"></script>
+<script src="plugin/wyyx/DrawPlugin.js"></script>
+<script src="public/js/common.js"></script>
+<script>
+    // App Key = fafb5aba8ed24dd54f6db765fc49d4eb
+    // App Secret = f4681c15fe50
+    //URL https://api.netease.im/nimserver/user/create.action
+    var wyyx = new NIM({
+        // 初始化SDK
+        // debug: true
+        appKey: 'fafb5aba8ed24dd54f6db765fc49d4eb',
+        account: 'qpt',
+        token: 'qq111111',
+        onconnect: onConnect,
+        onerror: onError,
+        onwillreconnect: onWillReconnect,
+        ondisconnect: onDisconnect,
+        // 多端
+        onloginportschange: onLoginPortsChange,
+        // 用户关系
+        onblacklist: onBlacklist,
+        onsyncmarkinblacklist: onMarkInBlacklist,
+        onmutelist: onMutelist,
+        onsyncmarkinmutelist: onMarkInMutelist,
+        // 好友关系
+        onfriends: onFriends,
+        onsyncfriendaction: onSyncFriendAction,
+        // 用户名片
+        onmyinfo: onMyInfo,
+        onupdatemyinfo: onUpdateMyInfo,
+        onusers: onUsers,
+        onupdateuser: onUpdateUser,
+        // 群组
+        onteams: onTeams,
+        onsynccreateteam: onCreateTeam,
+        onteammembers: onTeamMembers,
+        onsyncteammembersdone: onSyncTeamMembersDone,
+        onupdateteammember: onUpdateTeamMember,
+        // 会话
+        onsessions: onSessions,
+        onupdatesession: onUpdateSession,
+        // 消息
+        onroamingmsgs: onRoamingMsgs,
+        onofflinemsgs: onOfflineMsgs,
+        onmsg: onMsg,
+        // 系统通知
+        onofflinesysmsgs: onOfflineSysMsgs,
+        onsysmsg: onSysMsg,
+        onupdatesysmsg: onUpdateSysMsg,
+        onsysmsgunread: onSysMsgUnread,
+        onupdatesysmsgunread: onUpdateSysMsgUnread,
+        onofflinecustomsysmsgs: onOfflineCustomSysMsgs,
+        oncustomsysmsg: onCustomSysMsg,
+        // 同步完成
+        onsyncdone: onSyncDone
+        })
+    wyyx.applyFriend({
+        account: 'tcx',
+        ps: 'ps',
+        done: applyFriendDone
+    });
+    function applyFriendDone(error, obj) {
+        console.log('申请加为好友' + (!error?'成功':'失败'), error, obj);
+    }
+    function onConnect() {
+        console.log('连接成功');
+    }
+    function onWillReconnect(obj) {
+        // 此时说明 `SDK` 已经断开连接, 请开发者在界面上提示用户连接已断开, 而且正在重新建立连接
+        console.log('即将重连', obj);
+    }
+    function onDisconnect(error) {
+        // 此时说明 `SDK` 处于断开状态, 开发者此时应该根据错误码提示相应的错误信息, 并且跳转到登录页面
+        console.log('连接断开', error);
+        if (error) {
+            switch (error.code) {
+                // 账号或者密码错误, 请跳转到登录页面并提示错误
+                case 302:
+                    break;
+                // 重复登录, 已经在其它端登录了, 请跳转到登录页面并提示错误
+                case 417:
+                    break;
+                // 被踢, 请提示错误后跳转到登录页面
+                case 'kicked':
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    function onError(error, obj) {
+        console.log('发生错误', error, obj);
+    }
+
+    function onLoginPortsChange(loginPorts) {
+        console.log('当前登录帐号在其它端的状态发生改变了', loginPorts);
+    }
+
+    function onBlacklist(blacklist) {
+        console.log('收到黑名单', blacklist);
+        data.blacklist = nim.mergeRelations(data.blacklist, blacklist);
+        data.blacklist = nim.cutRelations(data.blacklist, blacklist.invalid);
+        refreshBlacklistUI();
+    }
+    function onMarkInBlacklist(obj) {
+        console.log(obj.account + '被你' + (obj.isAdd ? '加入' : '移除') + '黑名单', obj);
+        if (obj.isAdd) {
+            addToBlacklist(obj);
+        } else {
+            removeFromBlacklist(obj);
+        }
+    }
+    function addToBlacklist(obj) {
+        data.blacklist = nim.mergeRelations(data.blacklist, obj.record);
+        refreshBlacklistUI();
+    }
+    function removeFromBlacklist(obj) {
+        data.blacklist = nim.cutRelations(data.blacklist, obj.record);
+        refreshBlacklistUI();
+    }
+    function refreshBlacklistUI() {
+        // 刷新界面
+    }
+    function onMutelist(mutelist) {
+        console.log('收到静音列表', mutelist);
+        data.mutelist = nim.mergeRelations(data.mutelist, mutelist);
+        data.mutelist = nim.cutRelations(data.mutelist, mutelist.invalid);
+        refreshMutelistUI();
+    }
+    function onMarkInMutelist(obj) {
+        console.log(obj.account + '被你' + (obj.isAdd ? '加入' : '移除') + '静音列表', obj);
+        if (obj.isAdd) {
+            addToMutelist(obj);
+        } else {
+            removeFromMutelist(obj);
+        }
+    }
+    function addToMutelist(obj) {
+        data.mutelist = nim.mergeRelations(data.mutelist, obj.record);
+        refreshMutelistUI();
+    }
+    function removeFromMutelist(obj) {
+        data.mutelist = nim.cutRelations(data.mutelist, obj.record);
+        refreshMutelistUI();
+    }
+    function refreshMutelistUI() {
+        // 刷新界面
+    }
+
+    function onFriends(friends) {
+        console.log('收到好友列表', friends);
+        data.friends = nim.mergeFriends(data.friends, friends);
+        data.friends = nim.cutFriends(data.friends, friends.invalid);
+        refreshFriendsUI();
+    }
+    function onSyncFriendAction(obj) {
+        console.log('收到好友操作', obj);
+        switch (obj.type) {
+            case 'addFriend':
+                console.log('你在其它端直接加了一个好友' + obj);
+                onAddFriend(obj.friend);
+                break;
+            case 'applyFriend':
+                console.log('你在其它端申请加了一个好友' + obj);
+                break;
+            case 'passFriendApply':
+                console.log('你在其它端通过了一个好友申请' + obj);
+                onAddFriend(obj.friend);
+                break;
+            case 'rejectFriendApply':
+                console.log('你在其它端拒绝了一个好友申请' + obj);
+                break;
+            case 'deleteFriend':
+                console.log('你在其它端删了一个好友' + obj);
+                onDeleteFriend(obj.account);
+                break;
+            case 'updateFriend':
+                console.log('你在其它端更新了一个好友', obj);
+                onUpdateFriend(obj.friend);
+                break;
+        }
+    }
+    function onAddFriend(friend) {
+        data.friends = nim.mergeFriends(data.friends, friend);
+        refreshFriendsUI();
+    }
+    function onDeleteFriend(account) {
+        data.friends = nim.cutFriendsByAccounts(data.friends, account);
+        refreshFriendsUI();
+    }
+    function onUpdateFriend(friend) {
+        data.friends = nim.mergeFriends(data.friends, friend);
+        refreshFriendsUI();
+    }
+    function refreshFriendsUI() {
+        // 刷新界面
+    }
+
+    function onMyInfo(user) {
+        console.log('收到我的名片', user);
+        data.myInfo = user;
+        updateMyInfoUI();
+    }
+    function onUpdateMyInfo(user) {
+        console.log('我的名片更新了', user);
+        data.myInfo = NIM.util.merge(data.myInfo, user);
+        updateMyInfoUI();
+    }
+    function updateMyInfoUI() {
+        // 刷新界面
+    }
+    function onUsers(users) {
+        console.log('收到用户名片列表', users);
+        data.users = nim.mergeUsers(data.users, users);
+    }
+    function onUpdateUser(user) {
+        console.log('用户名片更新了', user);
+        data.users = nim.mergeUsers(data.users, user);
+    }
+
+    function onTeams(teams) {
+        console.log('群列表', teams);
+        data.teams = nim.mergeTeams(data.teams, teams);
+        onInvalidTeams(teams.invalid);
+    }
+    function onInvalidTeams(teams) {
+        data.teams = nim.cutTeams(data.teams, teams);
+        data.invalidTeams = nim.mergeTeams(data.invalidTeams, teams);
+        refreshTeamsUI();
+    }
+    function onCreateTeam(team) {
+        console.log('你创建了一个群', team);
+        data.teams = nim.mergeTeams(data.teams, team);
+        refreshTeamsUI();
+        onTeamMembers({
+            teamId: team.teamId,
+            members: owner
+        });
+    }
+    function refreshTeamsUI() {
+        // 刷新界面
+    }
+    function onTeamMembers(obj) {
+        console.log('收到群成员', obj);
+        var teamId = obj.teamId;
+        var members = obj.members;
+        data.teamMembers = data.teamMembers || {};
+        data.teamMembers[teamId] = nim.mergeTeamMembers(data.teamMembers[teamId], members);
+        data.teamMembers[teamId] = nim.cutTeamMembers(data.teamMembers[teamId], members.invalid);
+        refreshTeamMembersUI();
+    }
+    function onSyncTeamMembersDone() {
+        console.log('同步群列表完成');
+    }
+    function onUpdateTeamMember(teamMember) {
+        console.log('群成员信息更新了', teamMember);
+        onTeamMembers({
+            teamId: teamMember.teamId,
+            members: teamMember
+        });
+    }
+    function refreshTeamMembersUI() {
+        // 刷新界面
+    }
+
+    function onSessions(sessions) {
+        console.log('收到会话列表', sessions);
+        data.sessions = nim.mergeSessions(data.sessions, sessions);
+        updateSessionsUI();
+    }
+    function onUpdateSession(session) {
+        console.log('会话更新了', session);
+        data.sessions = nim.mergeSessions(data.sessions, session);
+        updateSessionsUI();
+    }
+    function updateSessionsUI() {
+        // 刷新界面
+    }
+
+    function onRoamingMsgs(obj) {
+        console.log('漫游消息', obj);
+        pushMsg(obj.msgs);
+    }
+    function onOfflineMsgs(obj) {
+        console.log('离线消息', obj);
+        pushMsg(obj.msgs);
+    }
+    function onMsg(msg) {
+        console.log('收到消息', msg.scene, msg.type, msg);
+        pushMsg(msg);
+    }
+    function pushMsg(msgs) {
+        if (!Array.isArray(msgs)) { msgs = [msgs]; }
+        var sessionId = msgs[0].sessionId;
+        data.msgs = data.msgs || {};
+        data.msgs[sessionId] = nim.mergeMsgs(data.msgs[sessionId], msgs);
+    }
+
+    function onOfflineSysMsgs(sysMsgs) {
+        console.log('收到离线系统通知', sysMsgs);
+        pushSysMsgs(sysMsgs);
+    }
+    function onSysMsg(sysMsg) {
+        console.log('收到系统通知', sysMsg)
+        pushSysMsgs(sysMsg);
+    }
+    function onUpdateSysMsg(sysMsg) {
+        pushSysMsgs(sysMsg);
+    }
+    function pushSysMsgs(sysMsgs) {
+        data.sysMsgs = nim.mergeSysMsgs(data.sysMsgs, sysMsgs);
+        refreshSysMsgsUI();
+    }
+    function onSysMsgUnread(obj) {
+        console.log('收到系统通知未读数', obj);
+        data.sysMsgUnread = obj;
+        refreshSysMsgsUI();
+    }
+    function onUpdateSysMsgUnread(obj) {
+        console.log('系统通知未读数更新了', obj);
+        data.sysMsgUnread = obj;
+        refreshSysMsgsUI();
+    }
+    function refreshSysMsgsUI() {
+        // 刷新界面
+    }
+    function onOfflineCustomSysMsgs(sysMsgs) {
+        console.log('收到离线自定义系统通知', sysMsgs);
+    }
+    function onCustomSysMsg(sysMsg) {
+        console.log('收到自定义系统通知', sysMsg);
+    }
+
+    function onSyncDone() {
+        console.log('同步完成');
+    }
+</script>
+</html>

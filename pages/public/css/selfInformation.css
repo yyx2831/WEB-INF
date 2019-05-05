@@ -1,0 +1,48 @@
+.header{
+    height: .88rem;
+    line-height: .88rem;
+    text-align: center;
+    font-size: .36rem;
+    background: #fff;
+    border-bottom: 1px solid #ebebeb;
+    position: relative;
+    color: #000;
+}
+.self-msg{
+    background: #fff;
+    margin-bottom: .2rem;
+}
+.self-msg li{
+    min-height: .88rem;
+    position: relative;
+    padding: .16rem .42rem .16rem .32rem;
+    border-bottom: 1px solid #ebebeb;
+}
+.self-msg li .msg-left{
+    display: inline-block;
+    font-size: .32rem;
+    color: #808080;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.msg-right{
+    min-width: 1rem;
+    min-height: .88rem;
+    text-align: right;
+    float: right;
+    font-size: .32rem;
+    color: #333;
+}
+.msg-right .self-headImg{
+    width: 1.28rem;
+    height: 1.28rem;
+    border-radius: .56rem;
+    border: solid 1px rgba(73, 51, 9, 0.1);
+}
+.msg-right .self-xingb{
+    width: .13rem;
+    height: .3rem;
+    vertical-align: middle;
+}
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>申请提现</title>
+    <base href="../">
+    <link rel="stylesheet" href="public/css/common.css">
+    <link rel="stylesheet" href="public/css/goWithdrawal.css">
+</head>
+
+<body>
+<div id="withdrawal" v-cloak>
+    <div style="width: 7.02rem;margin: .2rem auto">
+        <div class="bg-fff">
+            <!--<div class="withDra-line">-->
+                <!--<div class="demo-tit">姓名</div>-->
+                <!--<div class="demo-text fs-32">userName</div>-->
+            <!--</div>-->
+            <div class="withDra-line">
+                <div class="demo-tit">姓名</div>
+                <input class="demo-text fs-32" type="text" placeholder='请输入姓名' v-model="accountName" />
+                <div class="to-change display-inbl position-ab suiji"></div>
+                <div class='goAccount'>
+                    <a href="./doctor/account.htm"><img src='./public/img/jiantou_4.png' class='goAccount-image'></a>
+                </div>
+            </div>
+            <div class="withDra-line">
+                <div class="demo-tit">账号</div>
+                <input class="demo-text fs-32" type="text" placeholder='请输入账号' v-model="accountText" />
+                <div class="to-change display-inbl position-ab suiji"></div>
+            </div>
+            <div class="withDra-line" v-show="isChose==2">
+                <div class="demo-tit">开户行</div>
+                <input class="demo-text fs-32" type="text" placeholder='请输入开户行' v-model="bankname"/>
+                <div class="to-change display-inbl position-ab suiji"></div>
+            </div>
+
+            <!--<div class="withDra-line">-->
+                <!--<div class="demo-tit">开户行</div>-->
+                <!--<input class="demo-text fs-32" type="text" placeholder='请输入完整的开户行信息' value='bankName' />-->
+                <!--<div class="to-change display-inbl position-ab suiji"></div>-->
+            <!--</div>-->
+            <div class="withDra-line">
+                <div class="demo-tit"></div>
+                <div class="demo-text fs-30">
+                    <div class="pay-chose" :class="{'attr': isChose==1}" @click="isChose=1">
+                      <div></div>
+                    </div>微信
+                    <div class="pay-chose" :class="{'attr': isChose==2}" @click="isChose=2">
+                        <div></div>
+                    </div>银行卡
+                    <!--<div class="pay-chose" :class="{'attr': isChose==2}" @click="isChose=2">-->
+                        <!--<div></div>-->
+                    <!--</div>支付宝-->
+                </div>
+            </div>
+            <div class="withDra-line" style='border:none;'>
+                <div class="demo-tit">提现金额</div>
+            </div>
+            <div class="withDra-line">
+                <div class="demo-titRight">￥</div>
+                <input class="demo-text fs-54 fw-600" id="money" v-model="accountPrice" />
+            </div>
+            <div class="withDra-line" style='border:none;'>
+                <div class='fs-24'>当前可提现金额￥
+                    <span>{{balance}}</span>，
+                    <span class="color-ff5554" @click="bindMoney">全部提现</span>
+                    <span class='tip'>提现说明:周一到周五早上9点至17点30是及时处理，下班时间和周末顺延</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="to-communicate" @click="addAccount">确认提现</div>
+    </div>
+</div>
+
+</body>
+<script src="plugin/jquery/jquery-3.2.1.min.js"></script>
+<script src="plugin/vue/vue.js"></script>
+<script src="public/js/common.js"></script>
+<script src="public/js/goWithdrawal.js"></script>
+</html>

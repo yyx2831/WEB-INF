@@ -1,0 +1,60 @@
+.balance-top{
+    height: 2.20rem;
+    background-image: linear-gradient(0deg,
+    #26b14f 0%,
+    #6ede6a 100%),
+    linear-gradient(
+            #29cb5c,
+            #29cb5c);
+    background-blend-mode: normal,
+    normal;
+}
+.money-text{
+    color: #fff;
+    padding: .32rem 0 0 .34rem;
+    font-size: .28rem;
+}
+.balance-money{
+    color: #fff;
+    font-size: .88rem;
+    padding: .22rem 0 0 .42rem;
+}
+.feature-list{
+    padding: 0 .3rem;
+    background: #fff;
+    border-top: 1px solid #ebebeb;
+}
+.feature-list li{
+    height: .8rem;
+    line-height: .8rem;
+    padding: .2rem 0;
+    list-style: none;
+    border-bottom: 1px solid #ebebeb;
+    position: relative;
+    font-size: .3rem;
+    color: #333;
+}
+.feature-list li img{
+    width: .49rem;
+    height: .56rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: .03rem;
+    margin-right: .35rem;
+}
+.list-go{
+    width: .12rem;
+    height: .21rem;
+    background: url("../img/jiantou_4.png") no-repeat center center;
+    background-size: contain;
+}
+.togo-jiant.right-text{
+    right: .4rem;
+    font-size: .3rem;
+    color: #414141;
+}
+
+
+
+
+

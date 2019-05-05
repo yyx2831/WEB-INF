@@ -1,0 +1,305 @@
+*{margin: 0;padding: 0}
+html {
+    min-height: 100%;
+    background: #ebebeb;
+    line-height: initial;
+}
+
+body {
+    min-height: 100%;
+    font-size: 0;
+}
+[v-cloak] {
+    display: none;
+}
+a{text-decoration: none;color: inherit;}
+
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfloat{zoom:1}
+
+.self-bottom {
+    width: 7.5rem;
+    height: 1.20rem;
+    line-height: 1.2rem;
+    background-color: #ffffff;
+    box-shadow: 0 1px .11rem 1px
+    rgba(146, 140, 140, 0.16),
+    inset 0 -1px 0 0
+    #ebedf0;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+}
+.self-bottom a{
+    flex: 1;
+    font-size: .28rem;
+    color: #333;
+    text-align: center;
+}
+.self-bottom div img{
+    width: .55rem;
+    height: .55rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: .2rem;
+}
+.nav1{
+    border-right: 1px solid #ebebeb;
+}
+.self-bottom div.attr{
+    color: #5ac870;
+}
+.mask,
+#loading {
+    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+#loading {
+    z-index: 9999;
+}
+
+#loading img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
+
+.text-line-1{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*弹窗*/
+
+.msg-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 5.76rem;
+    height: 5.76rem;
+    background: #FFFFFF;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 100;
+    box-sizing: border-box;
+    padding-top: .6rem;
+}
+
+.msg-box img {
+    width: 1.46rem;
+    height: 1.46rem;
+}
+
+.msg-box h2 {
+    font-size: .36rem;
+    margin-top: 0.1rem;
+}
+
+.msg-box p {
+    font-size: .28rem;
+    color: #c2c2c2;
+}
+
+.msg-box button {
+    color: #fff;
+    background: #e01222;
+    border: none;
+    outline: none;
+    margin: 0.5rem auto 0;
+    display: block;
+    width: 3.8rem;
+    font-size: .32rem;
+    height: .88rem;
+    line-height: .88rem;
+    border-radius: 6px;
+}
+
+/*提示框*/
+#tip-toast {
+    position: fixed;
+    top: 16%;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    z-index: 2147483647;
+    display: none;
+}
+
+#tip-toast .toast-body {
+    padding: .2rem .5rem;
+    max-width: 80%;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: .3rem;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 6px;
+}
+
+.empty-content-box {
+    text-align: center;
+    padding-top: 30%;
+}
+
+.empty-content-box img {
+    width: 2.6rem;
+    height: 2.6rem;
+}
+
+.empty-content-box p {
+    font-size: .3rem;
+    color: #bcbcbc;
+}
+
+.three-none{
+    border: none;
+    outline: none;
+    background: none;
+}
+.togo-jiant{
+    position: absolute;
+    right: .03rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.color-green{color: #56d163;}
+.line-hei88{line-height: .88rem}
+.fs-48{font-size: .48rem}
+.fs-36{font-size: .36rem;}
+.fs-32{font-size: .32rem}
+.fs-28{font-size: .28rem;}
+.text-center{text-align: center}
+.text-right{text-align: right}
+.position-re{position: relative}
+.position-ab{position: absolute}
+.pd-top10{padding-top: .1rem}
+.pd-left24{padding-left: .24rem}
+.bg-f0f0f0{background: #f0f0f0}
+.outline-none{outline: none}
+.border-none{border: none}
+
+.back-btn,.back-btn-black{
+    width: .88rem;
+    height: .88rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.back-btn{
+    background: url("../img/jiantou_3.png") no-repeat center center;
+    transform: rotate(180deg);
+}
+.back-btn-black{
+    background: url("../img/jiantou_4.png") no-repeat center center;
+    transform: rotate(180deg);
+}
+
+
+.doctor{
+    padding-top: .26rem;
+    border-top: 1px dashed #ebebeb;
+    line-height: .88rem;
+}
+.doctor-headImg{
+    width: .90rem;
+    height: .88rem;
+    border-radius: 40%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: .24rem;
+}
+.doctor-name{
+    font-size: .34rem;
+    color: #2e2e2e;
+    margin-right: .26rem;
+}
+.doctor-class{
+    font-size: .26rem;
+    color: #7a7a7a;
+}
+.doctor-class img{
+    width: .13rem;
+}
+
+.to-communicate{
+    width: 80%;
+    height: .88rem;
+    line-height: .88rem;
+    text-align: center;
+    background-image: linear-gradient(0deg,
+    #26b14f 0%,
+    #6ede6a 100%),
+    linear-gradient(
+            #2d2d2d,
+            #2d2d2d);
+    background-blend-mode: normal,
+    normal;
+    border-radius: .44rem;
+
+    font-size: .36rem;
+    color: #fff;
+}
+
+
+/*text-change*/
+.mask.attr{
+    display: block;
+}
+.text-change{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 5.76rem;
+    background: #FFF;
+    border-radius: 8px;
+    z-index: 100;
+    box-sizing: border-box;
+}
+.text-title{
+    font-size: .36rem;
+    color: #000;
+    text-align: center;
+    position: relative;
+    line-height: .98rem;
+    border-bottom: 2px solid #ebebeb;
+}
+.text-close{
+    width: .36rem;
+    height: .36rem;
+    background: url("../img/shanchu.png") no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    right: .2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.change-content{
+    width: calc(80% - .4rem);
+    height: .88rem;
+    font-size: .32rem;
+    display: block;
+    padding: 0 .2rem;
+    margin: 0 auto .3rem;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #5ac870;
+    outline: none;
+}

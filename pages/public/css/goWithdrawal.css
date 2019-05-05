@@ -1,0 +1,122 @@
+.bg-fff {
+    background: #fff;
+}
+
+.color-ff5554 {
+    color: #ff5554;
+}
+
+.pd-left24 {
+    padding-left: .24rem;
+}
+
+.fs-24 {
+    font-size: .24rem;
+}
+
+.fs-30 {
+    font-size: .30rem;
+}
+
+.fs-32 {
+    font-size: .32rem;
+}
+
+.fs-54 {
+    font-size: .54rem;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+input{border: none;outline: none;background: none}
+
+.withDra-line {
+    position: relative;
+    line-height: 1.00rem;
+    color: #808080;
+    padding: .10rem .20rem;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.goAccount {
+    width: 1.00rem;
+    height: 1.00rem;
+    position: absolute;
+    right: 0;
+    top: .10rem;
+}
+
+.goAccount-image {
+    width: .17rem;
+    height: .32rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.demo-tit {
+    width: 1.68rem;
+    font-size: .32rem;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.demo-titRight {
+    width: 1.68rem;
+    padding-left: .24rem;
+    font-size: .42rem;
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+}
+
+.demo-text {
+    width: 4.5rem;
+    height: 1.00rem;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.pay-chose {
+    width: .40rem;
+    height: .40rem;
+    border: 1px solid #808080;
+    background: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0rem 0.05rem 0 .10rem;
+    position: relative;
+}
+
+.pay-chose.attr {
+    border: 1px solid #57d263;
+}
+
+.pay-chose div {
+    width: .20rem;
+    height: .20rem;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin-top: -.10rem;
+    margin-left: -.10rem;
+    background: #fff;
+}
+
+.pay-chose.attr div {
+    background: #57d263;
+}
+
+
+.tip{
+    display: block;
+    line-height: normal;
+}
+.to-communicate{
+    margin: 0 auto;
+}

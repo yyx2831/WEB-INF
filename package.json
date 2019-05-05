@@ -1,0 +1,32 @@
+{
+  "name": "ljcom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "keywords": [
+    "lj"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "css-loader": "^2.1.1",
+    "grunt-contrib-compass": "^1.1.1",
+    "html-webpack-plugin": "^2.30.1",
+    "postcss-loader": "^2.0.6",
+    "style-loader": "^0.18.2",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "webpack": "^3.2.0",
+    "webpack-dev-server": "^2.5.1",
+    "webpack-hot-middleware": "^2.13.0"
+  },
+  "dependencies": {
+    "echo-js": "^1.7.3",
+    "px2rem-loader": "^0.1.9"
+  }
+}

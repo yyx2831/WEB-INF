@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>医生详情</title>
+    <base href="../">
+    <link rel="stylesheet" href="public/css/common.css">
+    <link rel="stylesheet" href="public/css/selfInformation.css">
+</head>
+<body>
+<div id="information">
+    <div class="header"><div class="back-btn-black"></div>个人信息</div>
+    <ul class="self-msg">
+        <li class="clearfloat">
+            <div class="msg-left">头像</div>
+            <div class="msg-right"><img :src="selfInfor.headimg" class="self-headImg" alt=""></div>
+        </li>
+        <li class="clearfloat">
+            <span class="msg-left">姓名</span>
+            <div class="msg-right line-hei88" @click="selfMsgChange('姓名修改',1)">{{selfInfor.name}}</div>
+        </li>
+        <li class="clearfloat">
+            <span class="msg-left">性别</span>
+            <div class="msg-right line-hei88" @click="selfSexChange()">
+                <img src="./public/img/xingb_2.png" class="self-xingb" v-if="selfInfor.sex == 2" alt="">
+                <img src="./public/img/xingb_1.png" class="self-xingb" v-else alt="">
+            </div>
+        </li>
+        <li class="clearfloat">
+            <span class="msg-left">年龄</span>
+            <div class="msg-right line-hei88" @click="selfMsgChange('年龄修改',2)">{{selfInfor.age}}</div>
+        </li>
+        <li class="clearfloat">
+            <span class="msg-left">手机号</span>
+            <div class="msg-right line-hei88" @click="selfMsgChange('手机号修改',3)">{{selfInfor.phone}}</div>
+        </li>
+    </ul>
+    <ul class="self-msg">
+        <li class="clearfloat">
+            <div class="msg-left">医院</div>
+            <div class="msg-right line-hei88" @click="selfMsgChange('医院修改',4)">{{selfInfor.hospital}}</div>
+        </li>
+        <li class="clearfloat">
+            <span class="msg-left">职称</span>
+            <div class="msg-right line-hei88" @click="selfMsgChange('职称修改',5)">{{selfInfor.title}}</div>
+        </li>
+        <li class="clearfloat">
+            <span class="msg-left">科室</span>
+            <div class="msg-right line-hei88" @click="selfMsgChange('科室修改',6)">{{selfInfor.department}}</div>
+        </li>
+    </ul>
+    <div class="mask" :class="{'attr':textIsChange}">
+        <div class="text-change">
+            <div class="text-title">{{changeTitle}}
+                <div class="text-close" @click="textIsChange = !textIsChange"></div>
+            </div>
+            <input type="text" class="change-content"  v-model="changeContent" v-show="clickIndex==1||clickIndex==4||clickIndex==5||clickIndex==6">
+            <input type="number" class="change-content"  v-model="changeContent" v-show="clickIndex==2||clickIndex==3">
+            <div class="to-communicate" style="margin: 0 auto .6rem" v-if='!isLoading' @click="selfChange">确认修改</div>
+            <div class="to-communicate" style="margin: 0 auto .6rem" v-if='isLoading'>提交中</div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="plugin/jquery/jquery-3.2.1.min.js"></script>
+<script src="plugin/vue/vue.js"></script>
+<script src="public/js/common.js"></script>
+<script src="public/js/selfInformation.js"></script>
+</html>

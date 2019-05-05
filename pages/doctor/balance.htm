@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>余额</title>
+    <base href="../">
+    <link rel="stylesheet" href="public/css/common.css">
+    <link rel="stylesheet" href="public/css/balance.css">
+</head>
+
+<body>
+<div id="balance">
+    <div class="balance-top">
+        <p class="money-text">我的余额(元)</p>
+        <p class="balance-money">{{balance}}</p>
+    </div>
+    <ul class="feature-list">
+        <a href="./doctor/goWithdrawal.htm"><li>
+            <img src="./public/img/tixian_4.png" style="width: .63rem;height: .45rem" alt="">申请提现
+            <div class="togo-jiant list-go"></div>
+        </li></a>
+    </ul>
+</div>
+
+</body>
+<script src="plugin/jquery/jquery-3.2.1.min.js"></script>
+<script src="plugin/vue/vue.js"></script>
+<script src="public/js/common.js"></script>
+<script src="public/js/balance.js"></script>
+</html>

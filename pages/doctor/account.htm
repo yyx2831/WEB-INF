@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>提现账户</title>
+    <base href="../">
+    <link rel="stylesheet" href="public/css/common.css">
+    <link rel="stylesheet" href="public/css/account.css">
+</head>
+
+<body>
+<div id="account">
+    <!-- 信息参数弹出框 -->
+    <div class='human-demo'>
+        <div class='humanDemo-eg' v-for="(item,index) in list">
+            <a :href="'./doctor/goWithdrawal.htm?id='+item.id">
+                <div class='demo-eg-left'>
+                    <img src='./public/img/zhangh_1.png' class='demo-image' v-if="item.withdrawType==3">
+                    <img src='./public/img/zhangh_2.png' class='demo-image' v-if="item.withdrawType==2">
+                    <img src='./public/img/zhangh_3.png' class='demo-image' v-if="item.withdrawType==1">
+                </div>
+                <div class='demo-eg-right'>
+                    <div class='demo-number'>{{item.number}}</div>
+                    <div class='demo-name'>{{item.userName}}</div>
+                </div>
+            </a>
+            <img src='./public/img/shanchu.png' class='delate-btn' @click="delate(index,item.id)">
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="plugin/jquery/jquery-3.2.1.min.js"></script>
+<script src="plugin/vue/vue.js"></script>
+<script src="public/js/common.js"></script>
+<script src="public/js/account.js"></script>
+</html>

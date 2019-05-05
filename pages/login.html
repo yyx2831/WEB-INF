@@ -1,0 +1,415 @@
+<%@ page language="java" pageEncoding="UTF-8" %>
+ <%@ include file="/common/commonTag.jsp"%>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>瑞商医生-患者登录</title>
+	<!--<base href="${contextPath}">-->
+    <%-- <!-- --%>
+    <base href="${contextPath}">
+	<%--  -->  --%>
+    <%--
+    <base href="/">
+    --%>
+	<script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="//apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="public/css/login.css">
+	<style>
+			* {
+		margin: 0;
+		padding: 0;
+	}
+	
+	body,
+	html {
+		height: 100%;
+		width: 100%;
+		font-family: "微软雅黑";
+		box-sizing: border-box;
+	}
+	
+	body {
+		background: url(../imgs/beijing.png) no-repeat;
+		background-size: cover;
+		padding-top: 80px;
+	}
+	
+	header {
+		text-align: center;
+		padding-bottom: 60px;
+	}
+	
+	header img {
+		width: 80px;
+		height: 80px;
+	}
+	
+	header h1 {
+		color: #f93f1e;
+		font-size: 34px;
+		margin-top: 14px;
+		font-weight: normal;
+	}
+	
+	header p {
+		color: #888;
+		font-size: 14px;
+		margin-top: 4px;
+	}
+	
+	#container {}
+	
+	#container .inner-box {
+		width: 1204px;
+		height: 172px;
+		background: url(../imgs/bg.png) no-repeat;
+		background-size: cover;
+		margin: 0 auto;
+		line-height: 172px;
+		text-align: center;
+	}
+	
+	#container .my-select {
+		border: 1px solid #d4d4d4;
+		outline: none;
+		width: 262px;
+		height: 44px;
+		border-radius: 4px;
+		box-sizing: border-box;
+		padding-left: 5px;
+		font-size: 16px;
+	}
+	
+	#container .inner-box .clearDistance {
+		position: relative;
+		top: 1px;
+	}
+	
+	.login-btn {
+		top: 2px!important;
+	}
+	
+	#container .input-box {
+		position: relative;
+		display: inline-block;
+		margin-right: 20px;
+	}
+	
+	#container .input-box span {
+		position: absolute;
+		left: 10px;
+		top: 78px;
+		line-height: 16px;
+		height: 18px;
+		padding-right: 10px;
+		padding-left: 6px;
+		border-right: 1px solid #cccccc;
+		z-index: 2;
+	}
+	
+	#container .inner-box .my-button {
+		border: none;
+		outline: none;
+		width: 262px;
+		height: 44px;
+		font-size: 20px;
+		line-height: 20px;
+		background: #f8301b;
+		color: #fff;
+		border-radius: 4px;
+	}
+	
+	@media all and (max-width: 732px) {
+		html,
+		body {
+			background: #f4f4f4;
+			padding-top: 20px;
+		}
+		header h1{
+			font-size: 20px;
+		}
+		header p{
+			font-size: 10px;
+		}
+		header{
+			padding-bottom: 30px;
+		}
+		#container .inner-box {
+			width: 80%;
+			height: auto;
+			padding-bottom: 2px;
+			background: rgba(255,255,255,0.8);
+			border-radius: 6px;
+		}
+		#container .input-box {
+			width: 100%;
+			display: block;
+			height: 44px;
+			padding: 22px 0 11px;
+			text-align: center;
+			margin: 0;
+			box-sizing: content-box;
+		}
+		#container .my-select {
+			display: block;
+			width: 90%;
+			margin: 0 auto;
+		}
+		#container .inner-box .my-button {
+			display: block;
+			width: 90%;
+			margin: 20px auto;
+			line-height: 0;
+		}
+		#container .input-box span {
+			left: 34px;
+			top: 35px;
+		}
+	}
+	
+	input:focus,
+	select:focus {
+		border-color: #f8321d !important;
+	}
+	
+	footer {
+		text-align: center;
+		margin-top: 60px;
+	}
+	
+	footer .code-box {
+		border: 1px solid #f8301b;
+		width: 120px;
+		height: 120px;
+		padding: 10px;
+		display: inline-block;
+		background: #fff;
+		border-radius: 6px;
+	}
+	
+	footer img {
+		width: 100%;
+		height: 100%;
+	}
+	
+	footer p {
+		color: #f8301b;
+		font-size: 14px;
+		font-family: "黑体";
+		font-weight: bold;
+		margin-top: 10px;
+	}
+	/*提示框*/
+	
+	#tip-toast {
+		position: fixed;
+		top: 16%;
+		width: 100%;
+		left: 0;
+		text-align: center;
+		z-index: 2147483647;
+		display: none;
+	}
+	
+	#tip-toast .toast-body {
+		padding: 20px 50px;
+		color: #fff;
+		font-size: 20px;
+		display: inline-block;
+		background: rgba(0, 0, 0, 0.6);
+		border-radius: 6px;
+	}
+	</style>
+</head>
+
+<body>
+	<div class="loginVue" v-if>
+		<header>
+			<img src="public/img/logo160.png" />
+			<h1>良医良药共享平台</h1>
+		</header>
+		<div id="container" >
+			<div class="inner-box data-div">
+				
+				<div class="input-box"  style="padding: 15px 0px 0px 0px;" v-if="loginType == 0">
+					<input v-model="loginName" type="text" name="name" placeholder="请输入账号" class="my-select" style="line-height:normal;"/>
+				</div>
+				<div class="input-box"  style="padding: 15px 0px 0px 0px;" v-if="loginType == 0">
+					<input v-model="pwd" type="password" name="pwd" placeholder="请输入密码" class="my-select" style="line-height:normal;"/>
+				</div>
+				
+				<div class="input-box"  style="padding: 15px 0px 0px 0px;" v-if="loginType == 1">
+					<input v-model="phone" id="phone" type="text" name="phone" placeholder="请输入手机号" class="my-select" style="line-height:normal;"/>
+				</div>
+				<div class="input-box"  style="padding: 15px 0px 0px 0px;" v-if="loginType == 1">
+					
+					<div style="margin-left:14px;margin-right:14px" >
+					<input v-model="code" type="text" name="code" placeholder="请输入验证码" class="my-select" style="width:60%;float: left" style="line-height:normal;"/>
+					<button id="sendCodeBtn" style="width:40%;line-height: 42px; float: left;background: #f8301b;border: none;color: #fff;font-size:12px" @click="send()">发送验证码</button>
+					</div>
+					
+				</div>
+				
+				<div class="input-box"  style="padding: 0px; line-height: 25px; height:25px;text-align: left;">
+					<a style="color:blue;margin-left:20px;" v-if="loginType == 0" @click="changeLoginType(1)">短信登录</a>
+					<a style="color:blue;margin-left:20px;" v-if="loginType == 1" @click="changeLoginType(0)">账户密码登录</a>
+				</div>
+		<form action="doctor/login" method="post"  id="login_form" @submit.prevent="submit">
+        	<div style="display:none;"><input id="in_ph" type="text" name="phone" v-model="subPhone"/></div>
+        	<div style="display:none;"><input id="in_pw" type="text" name="pwd" v-model="subPwd"/></div>
+				<button type="submit" class="my-button login-btn clearDistance" @click="submit()">
+					立即登录
+				</button>
+        </form>
+			</div>
+		</div>
+		<input type="hidden" value="${msg }" id="input-msg">
+		<input type="hidden" value="${error }" id="input-error">
+	</div>
+</body>
+<script src="plugin/vue/vue.js"></script>
+<script>
+	
+var loginVue = new Vue({
+    el: '.loginVue',
+    data: {
+		loginName: "",
+		pwd:"",
+		phone:"",
+		code:"",
+		subPhone:"",
+		subPwd:"",
+		loginType:0,	//0：账号密码登录；1：短信登录
+    },
+    methods: {
+        changeLoginType: function (loginType) {
+            this.loginType = loginType;
+        },
+		
+        checkLogin:function (){
+			if(this.loginType == 0){
+				if(this.loginName == "" || this.pwd == ""){
+					myToast(1,"登录信息不完整");
+					return false;
+				}
+			}
+			if(this.loginType == 1){
+				if(this.phone == "" || this.code == ""){
+					myToast(1,"登录信息不完整");
+					return false;
+				}
+			}
+			return true;
+		},
+		send(){
+			sendMsg();
+		},
+		submit(){
+			if(this.loginType == 0){
+				this.subPhone = this.loginName;
+				this.subPwd = this.pwd;
+			}
+			if(this.loginType == 1){
+				this.subPhone = this.phone;
+				this.subPwd = this.code;
+			}
+			$("in_ph").val(this.subPhone);
+			$("in_pw").val(this.subPwd);
+			var flag = this.checkLogin();
+			if(flag){
+				$("#login_form").submit();
+			}
+		}
+    }
+
+});
+
+$(function(){
+	var error = $("#input-error").val();
+	if(error){
+		myToast(3,error);
+	}
+});
+
+//发送验证码
+var countdown = 60;
+function sendemail() {
+    var obj = $("#sendCodeBtn");
+    settime(obj);
+}
+function settime(obj) { //发送验证码倒计时
+    if (countdown == 0) {
+        obj.attr('disabled', false);
+        obj.text("发送验证码");
+        countdown = 60;
+        return;
+    } else {
+        obj.attr('disabled', true);
+        obj.text("重新发送(" + countdown + ")");
+        countdown--;
+    }
+    setTimeout(function () {
+            settime(obj)
+        }
+        , 1000);
+}
+
+function sendMsg() {
+	
+    if($("#phone").val().length < 11){
+        myToast(1, "请输入正确的手机号");
+        return
+    }
+    var url = 'user/sendcode';
+    sendemail();
+    $.post(url, {
+        "phone": $("#phone").val()
+    }, function (res) {
+    	res = JSON.parse(res);
+        if (res.code == 0) {
+            myToast(2,"获取验证码成功");
+        } else {
+            myToast(3, res.msg);
+        }
+    });
+}
+
+// 提示
+var timers;
+function myToast(number, content, callback) {
+    // number = 1  >>>>>  警告
+    // number = 2  >>>>>  成功
+    // number = 3  >>>>>  失败
+    if (number == 1) {
+        var text = '<img src="public/img/detail/tishitb_1.png" alt="">' + content
+    } else if (number == 2) {
+        var text = '<img src="public/img/detail/tishitb_2.png" alt="">' + content
+    } else {
+        var text = '<img src="public/img/detail/tishitb_3.png" alt="">' + content
+    }
+    if (!$("#tip-toast").html()) {
+        $("body").append('<div id="tip-toast"><div class="toast-body">' + text + '</div></div>');
+    }
+    var tip = $("#tip-toast");
+    tip.find(".toast-body").html(text);
+    tip.show();
+    var self = this;
+    clearTimeout(timers);
+    timers = setTimeout(function () {
+        tip.fadeOut();
+        if (callback) {
+            callback();
+        }
+    }, 2000);
+}
+    
+</script>
+</html>
